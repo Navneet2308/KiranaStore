@@ -22,6 +22,7 @@ public class SpashScreen extends AppCompatActivity {
             public void run() {
                 Intent intent = new Intent(SpashScreen.this,MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         },3000);
     }

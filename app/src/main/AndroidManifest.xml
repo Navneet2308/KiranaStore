@@ -9,16 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
-        <activity android:name=".SearchData"></activity>
-        <activity android:name=".ShopDetails" />
-        <activity android:name=".SpashScreen">
+        <activity android:name=".MapActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".SearchData"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ShopDetails"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SpashScreen"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDfkMUo5ZBzyB_h_QdoJf9_Y0Ni0FUkgqw" />
+
     </application>
 
 </manifest>

@@ -50,7 +50,7 @@ public class ShopDataAdapter extends RecyclerView.Adapter<ShopDataAdapter.ViewHo
         holder.imageView.setImageResource(img.get(position));
         holder.nameTv2.setText(offer.get(position).toString());
 
-        holder.imageView.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context,ShopDetails.class);
@@ -59,6 +59,15 @@ public class ShopDataAdapter extends RecyclerView.Adapter<ShopDataAdapter.ViewHo
                 intent.putExtra("shopimage",img.get(position));
                 intent.putExtra("available_item",avialbleitemarray.get(position).toString());
                 context.startActivity(intent);
+            }
+        });
+
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Intent intent = new Intent(context,MapActivity.class);
+                context.startActivity(intent);
+                return true;
             }
         });
 
