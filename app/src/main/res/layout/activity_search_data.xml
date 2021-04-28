@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+  >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/searc"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/back_btn"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            app:tint="@color/colorBlack"></ImageView>
+        <AutoCompleteTextView
+            android:id="@+id/searchEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:inputType="text"
+            android:background="@drawable/search_edittext_background"
+            android:drawableTint="@color/colorBlack"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:imeOptions="actionSearch"
+            android:hint="Search Services..."
+            android:padding="10dp"
+            />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_baseline_search_24"
+            android:layout_marginLeft="-50dp"
+            android:id="@+id/search_btn"
+            app:tint="@color/colorBlack"></ImageView>
+    </LinearLayout>
+
+    <ProgressBar
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:foregroundGravity="center"
+        android:id="@+id/progresslist"
+        android:visibility="gone"
+        android:layout_centerInParent="true"></ProgressBar>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/searc"
+        android:id="@+id/searcresult"
+        android:visibility="gone"
+        android:layout_marginHorizontal="5dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Search Result"
+            android:layout_margin="10dp"
+            android:textSize="18dp"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:id="@+id/text"
+            android:layout_height="wrap_content"></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0.009dp"
+            android:layout_marginHorizontal="10dp"
+            android:background="@color/colorBlack"
+            android:layout_below="@id/text"></TextView>
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/lsit"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:elevation="5dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_below="@+id/searcresult"
+        android:layout_alignParentStart="true"
+        android:dividerHeight="0.009dp"
+        android:divider="@color/new_theme_light"
+        android:scrollbarStyle="outsideOverlay"
+        android:layout_alignParentLeft="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:id="@+id/nodatafound">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_baseline_search_24"
+            android:scaleType="fitXY"
+            app:tint="@color/new_theme"></ImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="No Data Found"></TextView>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
@@ -23,6 +25,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void initview() {
         recyclerView =findViewById(R.id.recycler_view);
+    }
+    public  void gotosearch(View view)
+    {
+        Intent intent = new Intent(MainActivity.this,SearchData.class);
+        startActivity(intent);
     }
 
 }

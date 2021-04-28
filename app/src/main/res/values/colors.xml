@@ -26,4 +26,5 @@
     <color name="light_gray">#eceff1</color>
     <color name="new_theme">#1a1f61</color>
     <color name="new_theme_light">#448AFF</color>
+    <color name="bg">#f4f7fa</color>
 </resources>

@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">My Application</string>
+    <array name="shop_name_array">
+        <item>new</item>
+        <item>new</item>
+        <item>new</item>
+        <item>new</item>
+    </array>
+    <string name="a_kirana_store_is_a_local_department_store_business_which_sells_all_kinds_of_groceries_required_in_every_household_one_can_plan_to_set_up_a_store_based_on_their_fund_availability_get_inputs_from_the_sections_below_to_know_where_to_start_and_what_sequence_to_follow_for_your_provision_store_to_be_filled_with_all_grocery_and_daily_need_items">A Kirana store is a local department store business which sells all kinds of groceries required in every household. One can plan to set up a store, based on their fund availability. Get inputs from the sections below to know where to start and what sequence to follow for your provision store to be filled with all grocery and daily need items.</string>
 </resources>

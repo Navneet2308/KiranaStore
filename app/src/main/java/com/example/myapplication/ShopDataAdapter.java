@@ -23,13 +23,10 @@ import java.util.List;
 import java.util.regex.Pattern;
 public class ShopDataAdapter extends RecyclerView.Adapter<ShopDataAdapter.ViewHolder> {
     private Context context;
-
-    Integer[] img={R.drawable.shop1,R.drawable.shop2,R.drawable.shop3,R.drawable.shop1,R.drawable.shop1,R.drawable.shop3,R.drawable.shop1,R.drawable.shop2,R.drawable.shop3,R.drawable.shop2,R.drawable.shop2,R.drawable.shop3};
-
-    String[] Shopname ={"New Shop","Besties Shope","New Kirana Store","New Shop","Besties Shope","ALL in One","New Kirana Store","ALL in One","Kirana Store","New Kirana Store","ALL in One","Kirana Store"};
-
-    String[] Offer = {"FLat 50% Off","Flat 10% off","Flat 20% off","Flat 40% off","FLat 50% Off","Flat 10% off","Flat 20% off","Flat 40% off","FLat 50% Off","Flat 10% off","Flat 20% off","Flat 40% off"};
-
+    private ArrayList<String> shopname=new ArrayList<String>();
+    private ArrayList<String> avialbleitemarray=new ArrayList<String>();
+    private ArrayList<Integer> img=new ArrayList<Integer>();
+    private ArrayList<String> offer=new ArrayList<String>();
     public ShopDataAdapter( Context context) {
         this.context = context;
     }
@@ -44,16 +41,34 @@ public class ShopDataAdapter extends RecyclerView.Adapter<ShopDataAdapter.ViewHo
     public void onBindViewHolder(final ViewHolder holder, final int position) {
 
 
-        holder.nameTv.setText(Shopname[position]);
-        holder.imageView.setImageResource(img[position]);
-        holder.nameTv2.setText(Offer[position]);
+        Utils.getshopname(shopname);
+        Utils.getshopimg(img);
+        Utils.getoffer(offer);
+        Utils.getitems(avialbleitemarray);
+
+        holder.nameTv.setText(shopname.get(position).toString());
+        holder.imageView.setImageResource(img.get(position));
+        holder.nameTv2.setText(offer.get(position).toString());
+
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,ShopDetails.class);
+                intent.putExtra("offer",offer.get(position).toString());
+                intent.putExtra("shopname",(shopname.get(position).toString()));
+                intent.putExtra("shopimage",img.get(position));
+                intent.putExtra("available_item",avialbleitemarray.get(position).toString());
+                context.startActivity(intent);
+            }
+        });
+
 
     }
 
 
     @Override
     public int getItemCount() {
-        return img.length;
+        return 12;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
